@@ -1,0 +1,6 @@
+name: learn1
+enviroment: 
+  sdk: '>=2.0.0 <3.0.0'
+dev_dependencies:
+  util:
+    path: /Users/slashare/zongjie/flutter/code/learn1/util
