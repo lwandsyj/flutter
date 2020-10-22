@@ -1,5 +1,6 @@
-import 'web/web.dart';
 
 void main(){
-  print(age);
+ num a=3;
+ 
+ print(a);
 }
