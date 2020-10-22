@@ -1,2 +1,9 @@
+import 'package:learn1/goods/list.dart';
 
-String name ="util";
+import 'goods/list.dart';
+
+class Test {
+  static say() {
+    print(name);
+  }
+}

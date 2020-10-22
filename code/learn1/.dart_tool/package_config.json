@@ -1,0 +1,13 @@
+{
+  "configVersion": 2,
+  "packages": [
+    {
+      "name": "learn1",
+      "rootUri": "../",
+      "packageUri": "lib/"
+    }
+  ],
+  "generated": "2020-10-22T08:44:47.788059Z",
+  "generator": "pub",
+  "generatorVersion": "2.10.1"
+}
