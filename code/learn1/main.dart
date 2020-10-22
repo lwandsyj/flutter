@@ -1,5 +1,5 @@
-import 'web/web.dart';
+import 'package:learn1/a.dart';
 
-void main(){
-  print(age);
+void main() {
+  Test.say();
 }

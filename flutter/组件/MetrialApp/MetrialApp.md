@@ -7,3 +7,48 @@
 + CupertinoApp iOS风格的根Widget。
 
 2. MaterialApp
+
+> title : String 应用程序的名称，当使用手机任务管理器时，呈现的名称
+
+> routes: Map<string,widgetBuilder> 命名路由配置
+
++ key 为路由名称
+
++ value 为要跳转的页面组件，使用Scaffold 作为根组件
+
+
+        routes: <String, WidgetBuilder>{
+            '/': (BuildContext context) {
+                return Scaffold(
+                    appBar: AppBar(
+                    title: const Text('Home Route'),
+                    ),
+                );
+            },
+            '/about': (BuildContext context) {
+                return Scaffold(
+                    appBar: AppBar(
+                    title: const Text('About Route'),
+                    ),
+                );
+            }
+        },
+
+> initialRoute:String 初始路由，默认跳转页面
+
+   ***initialRoute 与 home 冲突，最好不要一起定义***
+
+        MaterialApp(
+            initialRoute: '/'
+        )
+
+> home：widget 主页
+
+   ***home 与 initialRoute 冲突***
+
+        MaterialApp(
+            home:Scaffold(
+                appBar: AppBar(
+                title: const Text('MaterialApp Theme'),
+                )
+        )
