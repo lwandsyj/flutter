@@ -1,19 +1,23 @@
 import 'package:flutter/material.dart';
 
-class Table extends StatefulWidget{
+class Table extends StatefulWidget {}
 
-
-}
-
-class _TableState extends State<Table>{
+class _TableState extends State<Table> {
   @override
-  void initState() { 
+  void initState() {
     super.initState();
-    
   }
+
   @override
   Widget build(BuildContext context) {
-    return Text('hello');
+    return Container(
+      child: BackButton(
+        onPressed: () => (context) {
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return Text('123');
+          }));
+        },
+      ),
+    );
   }
-
 }
