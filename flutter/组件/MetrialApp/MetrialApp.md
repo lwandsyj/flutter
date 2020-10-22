@@ -1,3 +1,5 @@
+https://flutter.io/widgets/material
+
 1. MaterialApp 是一个根Widget ,也就是Flutter应用程序的第一个Widget, 根Widget 有以下几种
 
 + WidgetsApp： 如果需要自定义风格，可以使用WidgetsApp。
@@ -7,6 +9,8 @@
 + CupertinoApp iOS风格的根Widget。
 
 2. MaterialApp
+
+要使用Material 风格的组件，必须要放到MaterialApp 中
 
 > title : String 应用程序的名称，当使用手机任务管理器时，呈现的名称
 
