@@ -12,13 +12,19 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Row(children: <Widget>[
+        child: Row(mainAxisSize: MainAxisSize.max, children: <Widget>[
           Text('hello sss app'),
           RaisedButton(
               child: Text('登录'),
               onPressed: () {
                 Navigator.pushNamed(context, '/login');
-              })
+              }),
+          GestureDetector(
+            child: Text('algin demo'),
+            onTap: () {
+              Navigator.pushNamed(context, '/align');
+            },
+          )
         ]),
       ),
     );
