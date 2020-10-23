@@ -1,5 +1,7 @@
 https://flutter.io/widgets/material
 
+为了继承主题数据，widget需要位于MaterialApp内才能正常显示， 因此我们使用MaterialApp来运行该应用
+
 1. MaterialApp 是一个根Widget ,也就是Flutter应用程序的第一个Widget, 根Widget 有以下几种
 
 + WidgetsApp： 如果需要自定义风格，可以使用WidgetsApp。
