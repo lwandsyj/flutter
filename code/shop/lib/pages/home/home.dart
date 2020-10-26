@@ -13,20 +13,27 @@ class _HomeState extends State<Home> {
     var size = MediaQuery.of(context).size;
     return Scaffold(
         appBar: AppBar(),
-        body: Stack(children: [
-          Positioned(
-            left: 50,
-            top: 20,
-            child: Container(
-              color: Colors.lightGreen,
-              width: 200,
-              height: 200,
-              child: Text(
-                'hello',
-                style: TextStyle(color: Colors.white),
+        body: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: [
+              Container(
+                width: size.width,
+                height: 200,
+                color: Colors.yellow,
               ),
-            ),
-          )
-        ]));
+              Container(
+                width: size.width,
+                height: 200,
+                color: Colors.lightGreen,
+              ),
+              Container(
+                width: size.width,
+                height: 200,
+                color: Colors.lightBlue,
+              ),
+            ],
+          ),
+        ));
   }
 }
