@@ -17,19 +17,25 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    var _scaffoldKey = new GlobalKey();
     return Scaffold(
+        key: _scaffoldKey,
         appBar: AppBar(
-            leading: GestureDetector(
-              child: Icon(Icons.arrow_back),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
             title: Center(child: Text('登录')),
             actions: [
-              Padding(
-                padding: EdgeInsets.all(10),
-                child: Icon(Icons.share),
+              Builder(
+                builder: (context) {
+                  return Padding(
+                    padding: EdgeInsets.all(10),
+                    child: IconButton(
+                      icon: Icon(Icons.share),
+                      onPressed: () {
+                        //_scaffoldKey.currentState.openDrawer();
+                        Scaffold.of(context).openDrawer();
+                      },
+                    ),
+                  );
+                },
               ),
               Padding(
                 padding: EdgeInsets.all(10),
@@ -58,7 +64,14 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                   Text('音乐'),
                 ],
                 controller: TabController(initialIndex: 1, length: 12, vsync: this))),
-        body: Center(child: LoginForm()));
+        body: Center(
+          child: LoginForm(),
+        ),
+        drawer: Drawer(
+          child: Center(
+            child: Text('Drawer'),
+          ),
+        ));
   }
 }
 
@@ -67,23 +80,23 @@ class LoginForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = TextEditingController();
+    controller.addListener(() {
+      print('input ${controller.text}');
+    });
     return Form(
       child: Center(
         child: Column(
           children: [
             TextFormField(
               decoration: InputDecoration(labelText: '用户名'),
+              controller: controller,
             ),
             TextFormField(decoration: InputDecoration(labelText: '密码'), obscureText: true),
             ElevatedButton(
               child: Text('登录'),
               onPressed: () {
-                showDialog(
-                  context: context,
-                  builder: (BuildContext context) {
-                    return Tooltip(message: '这是提示');
-                  },
-                );
+                print(controller.text);
               },
             ),
             Tooltip(

@@ -28,4 +28,41 @@
 
 + onEditingComplete 和 onSubmitted
 
++ controller: 通过controller 获取文本框的值
+
 当配置属性 textInputAction 是 就有变化 比如down之类才有效 （none 是无效的）
+
+2. 获取TextField 输入框的值
+
+> 使用controller 
+
+          @override
+            Widget build(BuildContext context) {
+               final controller = TextEditingController(); // 实例化controller
+               controller.addListener(() {
+                  print('input ${controller.text}');// 实时监听文本框的输入
+               });
+               return Form(
+                  child: Center(
+                     child: Column(
+                        children: [
+                           TextFormField(
+                           decoration: InputDecoration(labelText: '用户名'),
+                           controller: controller,
+                           ),
+                           TextFormField(decoration: InputDecoration(labelText: '密码'), obscureText: true),
+                           ElevatedButton(
+                           child: Text('登录'),
+                           onPressed: () {
+                              print(controller.text);// 获取文本框的值
+                           },
+                        ),
+          ])));
+
+> 使用onChanged 回调
+
+         TextField(
+            onChanged: (text) {
+               print("First text field: $text");
+            },
+         );

@@ -6,6 +6,7 @@ import 'package:shop/pages/login/login.dart';
 import 'pages/home/home.dart';
 import 'pages/login/login.dart';
 import 'package:shop/pages/align/alignDemo.dart';
+import 'package:shop/pages/gridView/index.dart';
 
 void main() {
   runApp(MyApp());
@@ -19,7 +20,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: '第一sr个电商app',
       initialRoute: '/',
-      routes: {'/': (context) => Home(), '/login': (context) => Login(), '/align': (context) => AlignDemo()},
+      routes: {
+        '/': (context) => Home(),
+        '/gridViewDemo': (context) => GridViewDemo(),
+        '/login': (context) => Login(),
+        '/align': (context) => AlignDemo()
+      },
     );
   }
 }

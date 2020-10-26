@@ -10,23 +10,23 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Scaffold(
-      body: Center(
-        child: Row(mainAxisSize: MainAxisSize.max, children: <Widget>[
-          Text('hello sss app'),
-          RaisedButton(
-              child: Text('登录'),
-              onPressed: () {
-                Navigator.pushNamed(context, '/login');
-              }),
-          GestureDetector(
-            child: Text('algin demo'),
-            onTap: () {
-              Navigator.pushNamed(context, '/align');
-            },
+        appBar: AppBar(),
+        body: Stack(children: [
+          Positioned(
+            left: 50,
+            top: 20,
+            child: Container(
+              color: Colors.lightGreen,
+              width: 200,
+              height: 200,
+              child: Text(
+                'hello',
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
           )
-        ]),
-      ),
-    );
+        ]));
   }
 }
