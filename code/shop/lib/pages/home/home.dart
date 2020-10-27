@@ -8,8 +8,42 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  _HomeState() {
+    print('constructor');
+    this.name = 'hello';
+  }
+  String name;
+
+  void onChangeName() {
+    setState(() {
+      this.name = 'flutter';
+    });
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    print('initState');
+  }
+
+  @override
+  void dispose() {
+    print('dispose');
+    // TODO: implement dispose
+    super.dispose();
+  }
+
+  @override
+  void didUpdateWidget(covariant Home oldWidget) {
+    // TODO: implement didUpdateWidget
+    super.didUpdateWidget(oldWidget);
+    print('didUpdate');
+  }
+
   @override
   Widget build(BuildContext context) {
+    print('build');
     var size = MediaQuery.of(context).size;
     return Scaffold(
         appBar: AppBar(),
@@ -21,6 +55,12 @@ class _HomeState extends State<Home> {
                 width: size.width,
                 height: 200,
                 color: Colors.yellow,
+                child: RaisedButton(
+                  child: Text(this.name),
+                  onPressed: () {
+                    this.onChangeName();
+                  },
+                ),
               ),
               Container(
                 width: size.width,

@@ -31,3 +31,8 @@
         Test a = Test('zhangsan');
 
         Test b = new Test('lisi');
+
+4. 命名构造函数
+
+        Person.anonymous() {}
+

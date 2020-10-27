@@ -1,6 +1,8 @@
 1.  Scaffold : 是一个路由页的骨架，我们使用它可以很容易地拼装出一个完整的页面。
 
    每个页面的开头使用Scaffold ,但是当前页的其他组件就不需要再使用了。
+   经常会作为MaterialApp的子Widget, Scaffold会自动填充可用的空间，这通常意味着它将占据整个窗口或屏幕，
+   并且Scaffold会自动适配屏幕。我们的布局就是在Scaffold中进行编写的
 
 2. Scaffold
 
