@@ -7,6 +7,7 @@ import 'pages/home/home.dart';
 import 'pages/login/login.dart';
 import 'package:shop/pages/align/alignDemo.dart';
 import 'package:shop/pages/gridView/index.dart';
+import 'package:shop/pages/bottom/index.dart';
 
 void main() {
   runApp(MyApp());
@@ -24,7 +25,8 @@ class MyApp extends StatelessWidget {
         '/': (context) => Home(),
         '/gridViewDemo': (context) => GridViewDemo(),
         '/login': (context) => Login(),
-        '/align': (context) => AlignDemo()
+        '/align': (context) => AlignDemo(),
+        'bottom': (context) => ScrollBottom()
       },
     );
   }
