@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'constants.dart';
 import 'package:plant/home/home.dart';
+import 'package:plant/screen/shop.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,6 +17,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(theme: ThemeData(primaryColor: kPrimaryColor), home: Home());
+    return MaterialApp(
+        theme: ThemeData(
+          primaryColor: kPrimaryColor,
+          textTheme: Theme.of(context).textTheme.apply(bodyColor: kTextColor),
+        ),
+        home: HomeScreen());
   }
 }

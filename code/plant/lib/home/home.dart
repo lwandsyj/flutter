@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:plant/constants.dart';
 
 import 'package:plant/detail/detail.dart';
@@ -43,7 +44,8 @@ class _HomeState extends State<Home> {
             IconButton(
               icon: Icon(Icons.mail),
               onPressed: () {},
-            )
+            ),
+            SvgPicture.asset('assets/icons/back_arrow.svg')
           ],
         ),
       ),
