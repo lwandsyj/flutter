@@ -20,6 +20,11 @@
 
 + backgroundColor： 背景颜色
 
++ resizeToAvoidBottomInset: 
+
+ 在 scafold 里设置 resizeToAvoidBottomInset: false，键盘会遮住布局，而不是顶起布局
+
+
 3. SnackBar 显示在顶部的提示框
 
             fElevatedButton(

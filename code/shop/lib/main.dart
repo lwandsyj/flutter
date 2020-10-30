@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'package:shop/pages/home/home.dart';
 import 'package:shop/pages/login/login.dart';
@@ -11,6 +14,9 @@ import 'package:shop/pages/bottom/index.dart';
 
 void main() {
   runApp(MyApp());
+  if (Platform.isAndroid) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(statusBarColor: Colors.transparent));
+  }
 }
 
 class MyApp extends StatelessWidget {

@@ -14,6 +14,8 @@
 
          this.scrollDirection = Axis.vertical, //滚动方向，默认是垂直方向
 
+![avartar](../../../assets/scroll1.jpg)
+
           @override
             Widget build(BuildContext context) {
                 var size = MediaQuery.of(context).size;

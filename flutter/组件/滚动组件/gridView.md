@@ -42,3 +42,34 @@ SliverGridDelegate是一个抽象类，定义了GridView Layout相关接口，�
 3. gridView.count
 
 gridView.count构造函数内部使用了SliverGridDelegateWithFixedCrossAxisCount，我们通过它可以快速的创建横轴固定数量子元素的GridView
+
+4. gridView 位于column 时，报错解决方案
+
+                Expanded( // 尽可能大的展示子组件
+                child: Column(
+                  children: [
+                    GridView.count(
+                      crossAxisCount: 2,
+                      children: [
+                        Container(
+                          height: 40,
+                          color: Colors.red,
+                        ),
+                        Container(
+                          height: 40,
+                          color: Colors.blue,
+                        ),
+                        Container(
+                          height: 40,
+                          color: Colors.green,
+                        ),
+                        Container(
+                          height: 40,
+                          color: Colors.grey,
+                        )
+                      ],
+                      shrinkWrap: true, // Creates a scrollable, 2D array of widgets with a fixed number of tiles in the cross axis.
+                    )
+                  ],
+                ),
+              )

@@ -6,6 +6,12 @@
 
 + style：样式
 
++ enabledBorder: InputBorder.none
+                        
++ focusedBorder: InputBorder.none,
+
++ border: 边框
+
 + textAlign： 水平对齐
 
 + readOnly: 只读
@@ -66,3 +72,28 @@
                print("First text field: $text");
             },
          );
+
+3. 自定义文本框
+
+         Container(
+            alignment: Alignment.center,
+            margin: EdgeInsets.symmetric(horizontal: 20),
+            padding: EdgeInsets.symmetric(horizontal: 20),
+            height: 54,
+            decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.all(Radius.circular(20))),
+            child: Row(
+              children: [
+                Expanded(
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: 'login',
+                      hintStyle: TextStyle(color: kPrimaryColor.withOpacity(0.5)),
+                      border: InputBorder.none,
+                    ),
+                  ),
+                ),
+                Icon(Icons.search),
+              ],
+            ),
+          ),
+![avartar](../../../assets/textfield1.jpg)
