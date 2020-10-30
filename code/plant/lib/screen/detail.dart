@@ -76,6 +76,12 @@ class _DetailBody extends StatelessWidget {
                     child: Column(
                       children: <Widget>[
                         _ColorSize(),
+                        SizedBox(height: 20 / 2),
+                        Description(),
+                        SizedBox(height: 20 / 2),
+                        AddCartNum(),
+                        SizedBox(height: 20 / 2),
+                        addCartButoon()
                       ],
                     ),
                   ),
@@ -158,6 +164,109 @@ class ColorDot extends StatelessWidget {
           shape: BoxShape.circle,
         ),
       ),
+    );
+  }
+}
+
+class Description extends StatelessWidget {
+  const Description({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    String dummyText =
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.";
+
+    return Container(
+      padding: EdgeInsets.symmetric(vertical: 20),
+      child: Text(dummyText, style: TextStyle(height: 1.5)),
+    );
+  }
+}
+
+class AddCartNum extends StatelessWidget {
+  const AddCartNum({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        _Counter(),
+        Container(
+          padding: EdgeInsets.all(8),
+          height: 32,
+          width: 32,
+          decoration: BoxDecoration(
+            color: Color(0xFFFF6464),
+            shape: BoxShape.circle,
+          ),
+          child: SvgPicture.asset("assets/icons/heart.svg"),
+        )
+      ],
+    );
+  }
+}
+
+class _Counter extends StatelessWidget {
+  const _Counter({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(children: [
+      _ButtonLine(icon: Icons.remove),
+      SizedBox(
+        width: 10,
+      ),
+      Text('01'),
+      SizedBox(
+        width: 10,
+      ),
+      _ButtonLine(icon: Icons.add),
+    ]);
+  }
+}
+
+class _ButtonLine extends StatelessWidget {
+  final IconData icon;
+  const _ButtonLine({Key key, this.icon}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return OutlineButton(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(13),
+      ),
+      child: Icon(icon),
+      onPressed: () {},
+    );
+  }
+}
+
+class addCartButoon extends StatelessWidget {
+  const addCartButoon({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Container(
+          margin: EdgeInsets.only(right: 10),
+          padding: EdgeInsets.all(10),
+          child: SvgPicture.asset("assets/icons/add_to_cart.svg", color: Colors.green),
+        ),
+        Expanded(
+            child: SizedBox(
+          height: 50,
+          child: RaisedButton(
+            color: Colors.green,
+            onPressed: () {},
+            child: Text(
+              'BUY NOW',
+              style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 17),
+            ),
+          ),
+        ))
+      ],
     );
   }
 }
