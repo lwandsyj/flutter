@@ -36,6 +36,8 @@
 
 ![avartar](../../../assets/AppBar1.jpg)
 
+> bottom: 顶部，比如上图中的TabBar
+
         AppBar(
             leading: GestureDetector(
               child: Icon(Icons.arrow_back),
@@ -77,4 +79,7 @@
                 ],
                 controller: TabController(initialIndex: 1, length: 12, vsync: this)),
 
-> 
+> elevation：控制阴影大小 ，没有默认ThemeData.appBarTheme.elevation属性，属性也没有默认4
+
+![avartar](../../../assets/appbare1.jpg)
+![avartar](../../../assets/appbare2.jpg)

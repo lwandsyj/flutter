@@ -2,7 +2,7 @@
 
 ![avartar](../../../assets/tabBar.jpg)
 
-2. 要使用TabBar 必须混入TickerProviderStateMixin
+2. 要使用TabBar 必须混入TickerProviderStateMixin，
 
         class _LoginState extends State<Login> with TickerProviderStateMixin {
                 @override
@@ -85,4 +85,53 @@
                 ),
                 ),
             );
+        }
+
+6. 使用ListView 模拟TabBar
+
+            @override
+        Widget build(BuildContext context) {
+            return Padding(
+            padding: const EdgeInsets.symmetric(vertical: kDefaultPaddin),
+            child: SizedBox(
+                height: 25,
+                child: ListView.builder(
+                   scrollDirection: Axis.horizontal, // 横向滚动
+                   itemCount: categories.length,
+                   itemBuilder: (context, index) => buildCategory(index),
+                ),
+            ),
+            );
+        }
+
+        Widget buildCategory(int index) {
+            return GestureDetector(
+            onTap: () {
+                setState(() {
+                selectedIndex = index;
+                });
+            },
+            child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: kDefaultPaddin),
+                child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start, // 默认居中显示
+                children: <Widget>[
+                    Text(
+                    categories[index],
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: selectedIndex == index ? kTextColor : kTextLightColor,
+                    ),
+                    ),
+                    Container(
+                        margin: EdgeInsets.only(top: kDefaultPaddin / 4), //top padding 5
+                        height: 2,
+                        width: 30,
+                        color: selectedIndex == index ? Colors.black : Colors.transparent, // tab 选中选项
+                    )
+                ],
+                ),
+            ),
+            );
+        }
         }

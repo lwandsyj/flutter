@@ -73,3 +73,22 @@ gridView.count构造函数内部使用了SliverGridDelegateWithFixedCrossAxisCou
                   ],
                 ),
               )
+  
+5. GridView 用法
+
+![avartar](../../../assets/gridView.jpg)
+
+> childAspectRatio: 子元素宽高比
+
++ AspectRatio首先会在布局限制条件允许的范围内尽可能的扩展，widget的高度是由宽度和比率决定的，类似于BoxFit中的contain，按照固定比率去尽量占满区域。
++ 如果在满足所有限制条件过后无法找到一个可行的尺寸，AspectRatio最终将会去优先适应布局限制条件，而忽略所设置的比率。
+
+
+
++ childAspectRatio: 0.75,
+
+![avartar](../../../assets/75ratio.jpg)
+
++ childAspectRatio: 1.0, 默认为1.0
+
+![avartar](../../../assets/1ratio.jpg)

@@ -18,7 +18,9 @@
 
 + bottomNavigationBar： 底部导航
 
-+ backgroundColor： 背景颜色
++ backgroundColor： 整屏幕的背景颜色
+
+![avartar](../../../assets/scoffoldBg.jpg)
 
 + resizeToAvoidBottomInset: 
 
