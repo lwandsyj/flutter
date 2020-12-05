@@ -81,7 +81,7 @@ class _DetailBody extends StatelessWidget {
                         SizedBox(height: 20 / 2),
                         AddCartNum(),
                         SizedBox(height: 20 / 2),
-                        addCartButoon()
+                        AddCartButoon()
                       ],
                     ),
                   ),
@@ -242,8 +242,8 @@ class _ButtonLine extends StatelessWidget {
   }
 }
 
-class addCartButoon extends StatelessWidget {
-  const addCartButoon({Key key}) : super(key: key);
+class AddCartButoon extends StatelessWidget {
+  const AddCartButoon({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
